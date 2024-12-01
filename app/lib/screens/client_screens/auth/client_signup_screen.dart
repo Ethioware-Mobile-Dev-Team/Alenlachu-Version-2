@@ -2,6 +2,7 @@ import 'package:app/controllers/common/authentication/authentication_cubit.dart'
 import 'package:app/controllers/common/authentication/authentication_state.dart';
 import 'package:app/core/theme/app_theme.dart';
 import 'package:app/screens/client_screens/client_landing_page.dart';
+import 'package:app/screens/client_screens/main/splash_screen.dart';
 import 'package:app/widgets/client/auth/client_signup_form.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -24,7 +25,7 @@ class _ClientSignupScreenState extends State<ClientSignupScreen> {
             Navigator.pushAndRemoveUntil(
               context,
               MaterialPageRoute(
-                  builder: (context) => const ClientLandingPage()),
+                  builder: (context) => SplashScreen()),
               (Route<dynamic> route) => false,
             );
           } else if (state is UnauthenticatedClient) {
